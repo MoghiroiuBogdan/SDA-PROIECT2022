@@ -1,0 +1,3 @@
+/Users/bogdanmoghiroiu/Desktop/facultate ubb/anul 1: sem 2/structuri de date/SDA-PROIECT2022/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/bogdanmoghiroiu/Desktop/facultate ubb/anul 1: sem 2/structuri de date/SDA-PROIECT2022/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/bogdanmoghiroiu/Desktop/facultate ubb/anul 1: sem 2/structuri de date/SDA-PROIECT2022/cmake-build-debug/CMakeFiles/SDA_PROIECT2022.dir

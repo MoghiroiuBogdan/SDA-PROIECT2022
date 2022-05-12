@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SDA_PROIECT2022",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SDA_PROIECT2022::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SDA_PROIECT2022-Debug-63b8ac956c3621e5c860.json",
+					"name" : "SDA_PROIECT2022",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/bogdanmoghiroiu/Desktop/facultate ubb/anul 1: sem 2/structuri de date/SDA-PROIECT2022/cmake-build-debug",
+		"source" : "/Users/bogdanmoghiroiu/Desktop/facultate ubb/anul 1: sem 2/structuri de date/SDA-PROIECT2022"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

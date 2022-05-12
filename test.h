@@ -1,0 +1,6 @@
+#ifndef SDA_PROIECT2022_TEST_H
+#define SDA_PROIECT2022_TEST_H
+
+void test();
+
+#endif //SDA_PROIECT2022_TEST_H
