@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(SDA_PROIECT2022
-        main.cpp user.h Repository.h service.h UserInterface.h array.h test.cpp test.h)
+        main.cpp user.h RepositoryUser.h serviceUser.h UserInterface.h array.h test.cpp test.h mesaj.h RepositoryMesaj.h serviceMesaj.h)

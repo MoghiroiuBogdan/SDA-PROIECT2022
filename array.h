@@ -61,6 +61,36 @@ public:
         return this->nrElements;
     }
 
+//    bool search(T elem) {
+//        for(int i=0;i<this->nrElements;i++)
+//            if(this->element[i] == elem)
+//                return true;
+//        return false;
+//    }
+//
+//    bool remove(T elem) {
+//        if (!search(elem))
+//            return false;
+//        bool found = false;
+//        int position;
+//        for (int i=0; i < this->nrElements and !found;i++){
+//            if(element[i] == elem){
+//                position = i;
+//                found= true;
+//            }
+//        }
+//        if (nr[position] == 1){
+//            for (int i=position; i<this->nrElements;i++){
+//                this->element[i] = this->element[i+1];
+//                this->nr[i] = this->nr[i+1];
+//            }
+//            this->nrElements--;
+//        }
+//        else
+//            this->nr[position]--;
+//        return true;
+//    }
+
 };
 
 

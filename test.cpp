@@ -1,6 +1,8 @@
 #include "test.h"
 #include "user.h"
-#include "Repository.h"
+#include "mesaj.h"
+#include "RepositoryUser.h"
+#include "RepositoryMesaj.h"
 #include <assert.h>
 #include "iostream"
 using namespace std;
@@ -20,6 +22,10 @@ void test(){
     u.AddItem(u1);
     u.AddItem(u2);
     assert(u.size() == 2);
+//    u.remove(u1);
+//    assert(u.size() == 1);
+
+
 
     Repo repo;
     repo.addUser(u1);
@@ -27,6 +33,23 @@ void test(){
     repo.addUser(u3);
 
     assert(repo.size() == 3);
+
+
+    mesaj m1("hellai");
+    mesaj m2("ke fai");
+    mesaj m3("buenas noces");
+
+    Array<mesaj> m;
+    m.AddItem(m1);
+    m.AddItem(m2);
+    m.AddItem(m3);
+    assert(m.size() == 3);
+
+    RepositoryMesaj repoM;
+    repoM.addMesaj(m1);
+    repoM.addMesaj(m2);
+    assert(repoM.size() == 2);
+
 
 
 }

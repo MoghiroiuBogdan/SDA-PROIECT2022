@@ -1,6 +1,6 @@
-#ifndef SDA_PROIECT2022_SERVICE_H
-#define SDA_PROIECT2022_SERVICE_H
-#include "Repository.h"
+#ifndef SDA_PROIECT2022_SERVICEUSER_H
+#define SDA_PROIECT2022_SERVICEUSER_H
+#include "RepositoryUser.h"
 #include "user.h"
 
 class Service{
@@ -27,4 +27,4 @@ public:
 };
 
 
-#endif //SDA_PROIECT2022_SERVICE_H
+#endif //SDA_PROIECT2022_SERVICEUSER_H
