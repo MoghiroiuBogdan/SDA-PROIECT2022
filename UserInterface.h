@@ -3,7 +3,8 @@
 #include "serviceUser.h"
 #include "serviceMesaj.h"
 #include "servicePrietenie.h"
-#include "iostream"
+#include <iostream>
+#include <string.h>
 using namespace std;
 
 
@@ -43,7 +44,8 @@ public:
                 cout << "scrieti mesajul: " << endl;
                 char *u;
                 u = new char[100];
-                cin >> u;
+                cin.get();
+                cin.get(u, 100);
                 this->serviceMesaj.AddMesaj(u);
             }
             else if(option == 2){
@@ -78,7 +80,8 @@ public:
                 cout << "dati numele userlui: " << endl;
                 char *u;
                 u = new char[100];
-                cin >> u;
+                cin.get();
+                cin.get(u, 100);
                 cout << "dati id ul: " << endl;
                 int i;
                 cin >> i;
@@ -121,7 +124,8 @@ public:
                 cout << "numele prietenului: " << endl;
                 char *u;
                 u = new char[100];
-                cin >> u;
+                cin.get();
+                cin.get(u ,100);
                 this->servicePrietenie.AddPrieten(u);
             }
             else if(option == 2){
