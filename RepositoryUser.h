@@ -17,13 +17,23 @@ public:
         this->element.AddItem(u);
     }
 
-    Array<User> getAll(){
-        return Array<User>();
+    User* getAll(){
+        return this->element.getAll();
     }
 
     int size(){
         return element.size();
     }
+
+    void delUser(User &u){
+        this->element.remove(u);
+    }
+
+//    User getUser(int id){
+//        User u = this->element.getAll();
+//        if(u.getId() == id)
+//            return u;
+//    }
 
 };
 

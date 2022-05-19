@@ -17,12 +17,17 @@ public:
         User U(u, i);
         this->repo.addUser(U);
     }
-    Array<User> getAll(){
+    User* getAll(){
         return this->repo.getAll();
     }
 
     int getNoService(){
         return this->repo.size();
+    }
+
+    void deleteElem(const char *uk, int id){
+        User u(uk, id);
+        this->repo.delUser(u);
     }
 };
 

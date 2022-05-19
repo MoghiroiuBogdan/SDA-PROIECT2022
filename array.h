@@ -17,7 +17,22 @@ public:
         this->nr = new int(this->maxCapacity);
         this->nrElements = 0;
     }
+//    void resize() {
+//        T * newElems = new T[maxCapacity*2];
+//        for(int i=0;i<nrElements;i++) newElems[i]=element[i];
+//        maxCapacity*=2;
+//        delete[] element;
+//        element = newElems;
+//    }
     void AddItem(T elem){
+//        if(nrElements==maxCapacity) resize(); //daca numarul de elemente depaseste capacitatea maxima
+//        //
+//        int pozitie = search(elem);
+//
+//        for(int i = nrElements;i > pozitie;i--) element[i]=element[i-1];
+//        element[pozitie] = elem;
+//        nrElements++;
+
         if(this->nrElements == this->maxCapacity) {
             this->maxCapacity *= 2;
             T *temp;
@@ -50,46 +65,49 @@ public:
 
     }
 
-    bool Search(T elem){
-        for(int i=0;i<this->nrOfElem;i++)
-            if(this->element[i] == elem)
-                return true;
-        return false;
-    }
+//    int search(T elem){
+//        int i=0;
+//        while(i<nrElements && elem > element[i]) i++;
+//        return i;
+//    }
 
     int size(){
         return this->nrElements;
     }
 
-//    bool search(T elem) {
-//        for(int i=0;i<this->nrElements;i++)
-//            if(this->element[i] == elem)
-//                return true;
-//        return false;
-//    }
-//
-//    bool remove(T elem) {
-//        if (!search(elem))
-//            return false;
-//        bool found = false;
-//        int position;
-//        for (int i=0; i < this->nrElements and !found;i++){
-//            if(element[i] == elem){
-//                position = i;
-//                found= true;
-//            }
-//        }
-//        if (nr[position] == 1){
-//            for (int i=position; i<this->nrElements;i++){
-//                this->element[i] = this->element[i+1];
-//                this->nr[i] = this->nr[i+1];
-//            }
-//            this->nrElements--;
-//        }
-//        else
-//            this->nr[position]--;
-//        return true;
-//    }
+    T* getAll(){
+        return this->element;
+    }
+
+    bool search(T elem) {
+        for(int i=0;i<this->nrElements;i++)
+            if(this->element[i] == elem)
+                return true;
+        return false;
+    }
+
+    bool remove(T elem) {
+        if (!search(elem))
+            return false;
+        bool found = false;
+        int position;
+        for (int i=0; i < this->nrElements and !found;i++){
+            if(element[i] == elem){
+                position = i;
+                found= true;
+            }
+        }
+        if (nr[position] == 1){
+            for (int i=position; i<this->nrElements;i++){
+                this->element[i] = this->element[i+1];
+                this->nr[i] = this->nr[i+1];
+            }
+            this->nrElements--;
+        }
+        else
+            this->nr[position]--;
+        return true;
+    }
 
 };
 

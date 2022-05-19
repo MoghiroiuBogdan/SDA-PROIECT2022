@@ -1,7 +1,8 @@
 #ifndef SDA_PROIECT2022_USER_H
 #define SDA_PROIECT2022_USER_H
 #include "string.h"
-
+#include <iostream>
+using namespace std;
 
 class User{
 private:
@@ -16,7 +17,7 @@ public:
 //        if (this->name){
 //            delete[] this->name;
 //            this->name = nullptr;}
-        this->name = new char[strlen(n) - 1];
+        this->name = new char[strlen(n) + 1];
         strcpy(this->name, n);
         this->id = i;
     }
@@ -25,7 +26,8 @@ public:
 //        if(this->name){
 //            delete[] this->name;
 //            this->name = nullptr;}
-        this->name = new char[strlen(u.name) - 1];
+        this->name = new char[strlen(u.name) + 1];
+        strcpy(this->name, u.name);
         this->id = u.id;
     }
 
@@ -42,7 +44,7 @@ public:
     void setName(char *n){
         if(this->name)
             delete[] this->name;
-        this->name = new char[strlen(n) - 1];
+        this->name = new char[strlen(n) + 1];
         strcpy(this->name, n);
     }
 
@@ -53,7 +55,21 @@ public:
     bool operator==(const User &u) {
         return ((strcmp(this->name, u.name) == 0) and (this->id == u.id));
     }
+    friend ostream &operator<<(ostream &os, User &u) {
+        os << u.name << ' ' << u.id << endl;
+        return os;
+    }
 
+//    User& operator = (const User &u){
+//        if(this != &u){
+//            if(this->name)
+//                delete[] this->name;
+//            this->name = new char[strlen(u.name) + 1];
+//            strcpy(this->name, u.name);
+//            this->id = u.id;
+//        }
+//        return *this;
+//    }
 
 };
 

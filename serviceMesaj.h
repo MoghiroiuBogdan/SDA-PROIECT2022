@@ -20,12 +20,17 @@ public:
         this->repoMesaj.addMesaj(m);
     }
 
-    Array<mesaj> getAll(){
+    mesaj* getAll(){
         return this->repoMesaj.getAll();
     }
 
     int getNoService(){
         return this->repoMesaj.size();
+    }
+
+    void deleteMesaj(const char *i){
+        mesaj m(i);
+        this->repoMesaj.delMesaj(m);
     }
 };
 

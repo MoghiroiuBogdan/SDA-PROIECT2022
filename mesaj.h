@@ -31,6 +31,11 @@ public:
         return (strcmp(this->info, m.info) == 0);
     }
 
+    friend ostream &operator<<(ostream &os, mesaj &u) {
+        os << u.info << endl;
+        return os;
+    }
+
 };
 
 

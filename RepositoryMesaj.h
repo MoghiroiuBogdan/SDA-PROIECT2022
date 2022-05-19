@@ -20,8 +20,12 @@ public:
     int size(){
         return this->element.size();
     }
-    Array<mesaj> getAll(){
-        return Array<mesaj>();
+    mesaj* getAll(){
+        return this->element.getAll();
+    }
+
+    void delMesaj(mesaj &m){
+        this->element.remove(m);
     }
 };
 

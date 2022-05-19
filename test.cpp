@@ -22,8 +22,8 @@ void test(){
     u.AddItem(u1);
     u.AddItem(u2);
     assert(u.size() == 2);
-//    u.remove(u1);
-//    assert(u.size() == 1);
+    u.remove(u1);
+    assert(u.size() == 1);
 
 
 
