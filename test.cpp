@@ -14,9 +14,9 @@ void test(){
     u1.setName("bogdan");
     u2.setName("paul");
     u3.setName("cojan");
-    u1.setId(1);
-    u2.setId(2);
-    u3.setId(3);
+    u1.setPassword("123b");
+    u2.setPassword("123p");
+    u3.setPassword("123c");
 
     Array<User> u;
     u.AddItem(u1);

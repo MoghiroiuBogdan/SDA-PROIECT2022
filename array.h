@@ -17,21 +17,8 @@ public:
         this->nr = new int(this->maxCapacity);
         this->nrElements = 0;
     }
-//    void resize() {
-//        T * newElems = new T[maxCapacity*2];
-//        for(int i=0;i<nrElements;i++) newElems[i]=element[i];
-//        maxCapacity*=2;
-//        delete[] element;
-//        element = newElems;
-//    }
+
     void AddItem(T elem){
-//        if(nrElements==maxCapacity) resize(); //daca numarul de elemente depaseste capacitatea maxima
-//        //
-//        int pozitie = search(elem);
-//
-//        for(int i = nrElements;i > pozitie;i--) element[i]=element[i-1];
-//        element[pozitie] = elem;
-//        nrElements++;
 
         if(this->nrElements == this->maxCapacity) {
             this->maxCapacity *= 2;
@@ -65,11 +52,6 @@ public:
 
     }
 
-//    int search(T elem){
-//        int i=0;
-//        while(i<nrElements && elem > element[i]) i++;
-//        return i;
-//    }
 
     int size(){
         return this->nrElements;

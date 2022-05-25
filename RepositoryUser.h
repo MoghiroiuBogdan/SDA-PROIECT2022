@@ -29,11 +29,6 @@ public:
         this->element.remove(u);
     }
 
-//    User getUser(int id){
-//        User u = this->element.getAll();
-//        if(u.getId() == id)
-//            return u;
-//    }
 
 };
 

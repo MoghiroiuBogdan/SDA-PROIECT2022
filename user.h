@@ -6,70 +6,71 @@ using namespace std;
 
 class User{
 private:
-    char *name;
-    int id;
+    string name;
+    string password;
 public:
-    User(){
-        this->name = nullptr;
-        this->id = 0;
-    }
-    User(const char *n, int i){
-//        if (this->name){
-//            delete[] this->name;
-//            this->name = nullptr;}
-        this->name = new char[strlen(n) + 1];
-        strcpy(this->name, n);
-        this->id = i;
+    User() = default;
+
+    User(string n, string p){
+        this->name = new char[n.length() + 1];
+        this->name = n;
+
+        this->password = new char[p.length() + 1];
+        this->password = p;
     }
 
     User(User &u){
-//        if(this->name){
-//            delete[] this->name;
-//            this->name = nullptr;}
-        this->name = new char[strlen(u.name) + 1];
-        strcpy(this->name, u.name);
-        this->id = u.id;
+        this->name = new char[u.name.length() + 1];
+        this->name = u.name;
+
+
+        this->password = new char[u.password.length() + 1];
+        this->password = u.password;
     }
 
     ~User() = default;
 
-    char* getName(){
+    string getName(){
         return this->name;
     }
 
-    int getId(){
-        return this->id;
+    string getPassword(){
+        return this->password;
     }
 
-    void setName(char *n){
-        if(this->name)
-            delete[] this->name;
-        this->name = new char[strlen(n) + 1];
-        strcpy(this->name, n);
+
+    void setName(string n){
+//        if(this->name)
+//            delete[] this->name;
+        this->name = new char[n.length() + 1];
+        this->name = n;
     }
 
-    void setId(int i){
-        this->id = i;
+
+    void setPassword(string p){
+//        if(this->password)
+//            delete[] this->password;
+
+        this->password = new char[p.length() + 1];
+        this->password = p;
     }
 
     bool operator==(const User &u) {
-        return ((strcmp(this->name, u.name) == 0) and (this->id == u.id));
+        return ((this->name == name) and (this->password == u.password));
     }
+
     friend ostream &operator<<(ostream &os, User &u) {
-        os << u.name << ' ' << u.id << endl;
+        os << u.name << ' ' << u.password << endl;
         return os;
     }
 
-//    User& operator = (const User &u){
-//        if(this != &u){
-//            if(this->name)
-//                delete[] this->name;
-//            this->name = new char[strlen(u.name) + 1];
-//            strcpy(this->name, u.name);
-//            this->id = u.id;
-//        }
-//        return *this;
-//    }
+    User& operator = (const User &u){
+        if(this != &u){
+            this->name = u.name;
+            this->password = u.password;
+        }
+        return *this;
+    }
 
 };
 

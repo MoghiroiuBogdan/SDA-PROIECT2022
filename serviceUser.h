@@ -13,8 +13,8 @@ public:
     Service(Repo &r){
         this->repo = r;
     }
-    void addElem(const char *u, int i){
-        User U(u, i);
+    void addElem(string u, string p){
+        User U(u, p);
         this->repo.addUser(U);
     }
     User* getAll(){
@@ -25,9 +25,18 @@ public:
         return this->repo.size();
     }
 
-    void deleteElem(const char *uk, int id){
-        User u(uk, id);
+    void deleteElem(const char *uk, char* p){
+        User u(uk, p);
         this->repo.delUser(u);
+    }
+
+    bool verifyUser(string username, string password){
+        User *u = this->repo.getAll();
+
+        for(int i=0;i<this->getNoService();i++)
+            if(username == u[i].getName() and password == u[i].getPassword())
+                return true;
+        return false;
     }
 };
 

@@ -8,6 +8,7 @@ private:
     RepositoryPrietenie repoPrieten;
 public:
     ServicePrietenie()=default;
+
     ServicePrietenie(RepositoryPrietenie &r){
         this->repoPrieten = r;
     }
