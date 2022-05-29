@@ -1,5 +1,7 @@
 #include "UserInterface.h"
 #include "test.h"
+#include "RepositoryUser.h"
+#include "serviceUser.h"
 #include <iostream>
 using namespace std;
 int main(){
@@ -11,8 +13,7 @@ int main(){
     r.addUser(u);
 
     Service s;
-    s.addElem(u.getName(), u.getPassword());
-
+    s.addElem("bogdan", "123b");
 
     test();
     ui console;

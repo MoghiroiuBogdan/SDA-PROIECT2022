@@ -29,6 +29,18 @@ public:
         this->element.remove(u);
     }
 
+    void updateUser(User &uv, User &un){
+        User *user;
+        user = this->element.getAll();
+
+        for(int i=0;i<this->element.size();i++)
+            if(user[i] == uv)
+                delUser(uv);
+
+        addUser(un);
+
+    }
+
 
 };
 

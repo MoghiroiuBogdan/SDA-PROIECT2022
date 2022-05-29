@@ -30,6 +30,12 @@ public:
         this->repo.delUser(u);
     }
 
+    void updateElem(string uv, string pv,string un,string pn){
+        User Uv(uv, pv);
+        User Un(un, pn);
+        this->repo.updateUser(Uv, Un);
+    }
+
     bool verifyUser(string username, string password){
         User *u = this->repo.getAll();
 

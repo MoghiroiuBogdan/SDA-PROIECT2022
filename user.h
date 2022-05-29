@@ -40,17 +40,12 @@ public:
 
 
     void setName(string n){
-//        if(this->name)
-//            delete[] this->name;
         this->name = new char[n.length() + 1];
         this->name = n;
     }
 
 
     void setPassword(string p){
-//        if(this->password)
-//            delete[] this->password;
-
         this->password = new char[p.length() + 1];
         this->password = p;
     }
