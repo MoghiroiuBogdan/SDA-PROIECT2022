@@ -19,7 +19,7 @@ public:
     }
 
     void AddItem(T elem){
-
+        ///adaugare elem in lista
         if(this->nrElements == this->maxCapacity) {
             this->maxCapacity *= 2;
             T *temp;
@@ -54,14 +54,17 @@ public:
 
 
     int size(){
+        ///dimensiunea listei
         return this->nrElements;
     }
 
     T* getAll(){
+        ///returneaza elem din lista
         return this->element;
     }
 
     bool search(T elem) {
+        ///verifica daca un elem se afla in lista
         for(int i=0;i<this->nrElements;i++)
             if(this->element[i] == elem)
                 return true;
@@ -69,6 +72,7 @@ public:
     }
 
     bool remove(T elem) {
+        ///stergerea unui element din lista
         if (!search(elem))
             return false;
         bool found = false;

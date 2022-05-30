@@ -32,12 +32,15 @@ public:
     void updateUser(User &uv, User &un){
         User *user;
         user = this->element.getAll();
-
+        bool verify = false;
         for(int i=0;i<this->element.size();i++)
-            if(user[i] == uv)
+            if(user[i] == uv){
                 delUser(uv);
+                verify = true;}
 
-        addUser(un);
+        if(verify == true)
+            addUser(un);
+        else cout<<"nu exista acest cont!"<<endl;
 
     }
 

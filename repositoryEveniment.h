@@ -2,6 +2,7 @@
 #define SDA_PROIECT2022_REPOSITORYEVENIMENT_H
 #include "array.h"
 #include "eveniment.h"
+#include "bsc.h"
 
 class RepositoryEveniment{
 private:
@@ -16,18 +17,22 @@ public:
     ~RepositoryEveniment() = default;
 
     void AddItem(Eveniment &e){
+        ///adaugare o entitate de tip Eveniment
         this->element.AddItem(e);
     }
 
     void deleteItem(Eveniment &e){
+        ///stegerea unei entitati de tip Eveniment
         this->element.remove(e);
     }
 
     Eveniment *getAll(){
+        ///retunreaza toate elementele
         return this->element.getAll();
     }
 
     int size(){
+        ///returneaza dimensiunea entitatii
         return this->element.size();
     }
 };

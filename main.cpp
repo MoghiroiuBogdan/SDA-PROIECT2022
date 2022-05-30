@@ -15,6 +15,7 @@ int main(){
     Service s;
     s.addElem("bogdan", "123b");
 
+
     test();
     ui console;
     console.runMenu();
