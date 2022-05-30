@@ -5,35 +5,37 @@
 
 class prietenie{
 private:
-    char *numePrieten;
+    string numePrieten;
+    string numeUser;
 public:
-    prietenie(){
-        this->numePrieten = nullptr;
-    }
-    prietenie(const char* np){
-        this->numePrieten = new char[strlen(np) + 1];
-        strcpy(this->numePrieten, np);
+    prietenie() = default;
+
+    prietenie(string np, string nU){
+        this->numePrieten =  np;
+        this->numeUser = nU;
     }
 
     ~prietenie() = default;
 
-    char *getNumePrieten(){
+    string getNumePrieten(){
         return this->numePrieten;
     }
 
+    string getNumeUser(){
+        return this->numeUser;
+    }
+
     void setNumePrieten(char *np){
-        if(this->numePrieten)
-            delete[] this->numePrieten;
         this->numePrieten = new char[strlen(np) + 1];
-        strcpy(this->numePrieten, np);
+        this->numePrieten =  np;
     }
 
     bool operator ==(const prietenie &p){
-        return (strcmp(this->numePrieten, p.numePrieten) == 0);
+        return((this->numePrieten ==  p.numePrieten) and (this->numeUser == p.numeUser));
     }
 
     friend ostream &operator<<(ostream &os,prietenie &p){
-        os << p.numePrieten << endl;
+        os << p.numePrieten << ' '<<p.numeUser << endl;
         return os;
     }
 };

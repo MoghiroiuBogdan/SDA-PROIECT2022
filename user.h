@@ -12,10 +12,9 @@ public:
     User() = default;
 
     User(string n, string p){
-        this->name = new char[n.length() + 1];
         this->name = n;
 
-        this->password = new char[p.length() + 1];
+//        this->password = new char[p.length() + 1];
         this->password = p;
     }
 

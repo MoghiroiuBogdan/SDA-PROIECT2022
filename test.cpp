@@ -26,7 +26,6 @@ void test(){
     assert(u.size() == 1);
 
 
-
     Repo repo;
     repo.addUser(u1);
     repo.addUser(u2);
@@ -35,15 +34,17 @@ void test(){
     assert(repo.size() == 3);
 
 
-    mesaj m1("hellai");
-    mesaj m2("ke fai");
-    mesaj m3("buenas noces");
+    mesaj m1("hellai", "ion", "vasile");
+    mesaj m2("ke fai", "ion", "vasi");
+    mesaj m3("buenas noces", "ion", "vaso");
+
 
     Array<mesaj> m;
     m.AddItem(m1);
     m.AddItem(m2);
     m.AddItem(m3);
     assert(m.size() == 3);
+
 
     RepositoryMesaj repoM;
     repoM.addMesaj(m1);

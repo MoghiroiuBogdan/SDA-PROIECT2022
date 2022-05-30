@@ -15,8 +15,8 @@ public:
 
     ~ServiceMesaj()=default;
 
-    void AddMesaj(const char* i){
-        mesaj m(i);
+    void AddMesaj(string i, string user1, string user2){
+        mesaj m(i, user1, user2);
         this->repoMesaj.addMesaj(m);
     }
 
@@ -28,8 +28,8 @@ public:
         return this->repoMesaj.size();
     }
 
-    void deleteMesaj(const char *i){
-        mesaj m(i);
+    void deleteMesaj(string i, string user1, string user2){
+        mesaj m(i, user1, user2);
         this->repoMesaj.delMesaj(m);
     }
 };

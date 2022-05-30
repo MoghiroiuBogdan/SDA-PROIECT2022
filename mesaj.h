@@ -4,35 +4,50 @@
 
 class mesaj{
 private:
-    char *info;
+    string info;
+    string user1;
+    string user2;
 public:
-    mesaj(){
-        this->info = nullptr;
-    }
+    mesaj() = default;
 
-    mesaj(const char* i){
-        this->info = new char[strlen(i) + 1];
-        strcpy(this->info, i);
+    mesaj(string i, string user1, string user2){
+        this->info =  i;
+        this->user1 = user1;
+        this->user2 = user2;
     }
     ~mesaj()=default;
 
-    char* getInfo(){
+    string getInfo(){
         return this->info;
     }
 
-    void setInfo(char* i){
-        if(this->info)
-            delete[] this->info;
-        this->info = new char[strlen(i) + 1];
-        strcpy(this->info, i);
+    string getUser1(){
+        return this->user1;
     }
 
-    bool operator ==(const mesaj &m){
-        return (strcmp(this->info, m.info) == 0);
+    string getUser2(){
+        return this->user2;
+    }
+
+    void setInfo(string i){
+        this->info = new char[i.length() + 1];
+        this->info = i;
+    }
+
+    void setUser1(string user1){
+        this->user1 = user1;
+    }
+
+    void setUser2(string user2){
+        this->user2 = user2;
+    }
+
+    bool operator == (const mesaj &m){
+        return ((this->info ==  m.info) and (this->user1 == m.user1) and (this->user2 == m.user2));
     }
 
     friend ostream &operator<<(ostream &os, mesaj &u) {
-        os << u.info << endl;
+        os << "to" <<' '<<u.user1<<' '<<"from"<<' '<<u.user2 <<' '<<"message: "<<u.info<<endl;
         return os;
     }
 

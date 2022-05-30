@@ -12,7 +12,7 @@ private:
     int maxCapacity;
 public:
     Array(){
-        this ->maxCapacity = 5;
+        this ->maxCapacity = 30;
         this->element = new T[this->maxCapacity];
         this->nr = new int(this->maxCapacity);
         this->nrElements = 0;
@@ -22,6 +22,8 @@ public:
         ///adaugare elem in lista
         if(this->nrElements == this->maxCapacity) {
             this->maxCapacity *= 2;
+//            this->element = new T[this->maxCapacity];
+//            this->nr = new int(this->maxCapacity);
             T *temp;
             int *tempOccurences;
             temp = new T[(this->maxCapacity)];

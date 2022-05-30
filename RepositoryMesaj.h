@@ -6,8 +6,8 @@ class RepositoryMesaj{
 private:
     Array<mesaj> element;
 public:
-    RepositoryMesaj(){
-    }
+    RepositoryMesaj() = default;
+
     RepositoryMesaj(const RepositoryMesaj &r){
         this->element = r.element;
     }

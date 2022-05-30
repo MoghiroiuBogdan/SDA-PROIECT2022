@@ -15,8 +15,8 @@ public:
 
     ~ServicePrietenie() = default;
 
-    void AddPrieten(char *nume){
-        prietenie p(nume);
+    void AddPrieten(char *nume, string numeUser){
+        prietenie p(nume, numeUser);
         this->repoPrieten.addPrieten(p);
     }
 
@@ -28,8 +28,8 @@ public:
         return this->repoPrieten.size();
     }
 
-    void deletePrietenie(char *nume){
-        prietenie p(nume);
+    void deletePrietenie(char *nume, string numeUser){
+        prietenie p(nume, numeUser);
         this->repoPrieten.delPrietenie(p);
     }
 };

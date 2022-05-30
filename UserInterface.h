@@ -90,66 +90,67 @@ public:
 
     void runMenu2(string username){
         cout<<endl;
-        while(true){
-            cout<<"welcome, "<<username<<endl;
-            cout<<"1.add friend"<<endl;
-            cout<<"2.delete friend"<<endl;
-            cout<<"3.view friends"<<endl;
-            cout<<"4.write a message"<<endl;
-            cout<<"5.delete message"<<endl;
-            cout<<"6.view messages"<<endl;
-            cout<<"7.add an event you're interested in"<<endl;
-            cout<<"8.delete an event from your list"<<endl;
-            cout<<"9.view events"<<endl;
-            cout<<"10.edit your account"<<endl;
-            cout<<"11.exit!"<<endl;
+        while(true) {
+            cout << "welcome, " << username << endl;
+            cout << "1.add friend" << endl;
+            cout << "2.delete friend" << endl;
+            cout << "3.view friends" << endl;
+            cout << "4.write a message" << endl;
+            cout << "5.delete message" << endl;
+            cout << "6.view messages" << endl;
+            cout << "7.add an event you're interested in" << endl;
+            cout << "8.delete an event from your list" << endl;
+            cout << "9.view events" << endl;
+            cout << "10.edit your account" << endl;
+            cout << "11.exit!" << endl;
 
             int option;
-            cout<<"dati optiunea: "<<endl;
+            cout << "dati optiunea: " << endl;
             cin >> option;
 
-            if (option == 1){
+            if (option == 1) {
                 cout << "numele prietenului: " << endl;
                 char *u;
                 u = new char[100];
                 cin.get();
-                cin.get(u ,100);
-                this->servicePrietenie.AddPrieten(u);
-                cout<<u<<' '<<"s-a imprietenit la"<<' '<<username<<endl;
-            }
-            else if(option == 2){
-                cout<<"dati numele prietenului pe care doriti sa l stergeti: "<<endl;
-                char *n = new char[100];
-                cin >> n;
-                this->servicePrietenie.deletePrietenie(n);
-                cout<<n<<' '<<"a fost dezabonat de la"<<' '<<username<<endl;
+                cin.get(u, 100);
+                this->servicePrietenie.AddPrieten(u, username);
+                cout << u << ' ' << "s-a imprietenit la" << ' ' << username << endl;
             }
 
-            else if(option == 3){
+            else if (option == 2) {
+                cout << "dati numele prietenului pe care doriti sa l stergeti: " << endl;
+                char *n = new char[100];
+                cin >> n;
+                this->servicePrietenie.deletePrietenie(n, username);
+                cout << n << ' ' << "a fost dezabonat de la" << ' ' << username << endl;
+            }
+
+            else if (option == 3) {
                 prietenie *p;
                 p = this->servicePrietenie.getAll();
-                cout<<"lista de prieteni ai lui "<<username<<" este: "<<endl;
-                for(int i=0;i<this->servicePrietenie.getNoService();i++)
-                    cout<<p[i]<<endl;
+                cout << "lista de prieteni ai lui " << username << " este: " << endl;
+                for (int i = 0; i < this->servicePrietenie.getNoService(); i++)
+                    if(p[i].getNumeUser() == username)
+                        cout << p[i].getNumePrieten() << endl;
             }
 
             else if(option == 4){
                 cout<<"to ... "<<endl;
-                char *p = new char[100];
+                string p;
                 cin >> p;
                 prietenie *prieten;
                 prieten = this->servicePrietenie.getAll();
                 bool verify = false;
                 for(int i=0;i<this->servicePrietenie.getNoService();i++)
-                    if(strcmp(p, prieten[i].getNumePrieten()) == 0)
+                    if(p ==  prieten[i].getNumePrieten())
                         verify = true;
                 if(verify == true){
                     cout << "scrieti mesajul catre "<< p << endl;
-                    char *u;
-                    u = new char[100];
+                    string u;
                     cin.get();
-                    cin.get(u, 100);
-                    this->serviceMesaj.AddMesaj(u);
+                    getline(cin, u);
+                    this->serviceMesaj.AddMesaj(u, p ,username);
                 }
                 else
                     cout<<"nu exista un prieten cu acest nume!"<<endl;
@@ -158,19 +159,24 @@ public:
 
             else if(option == 5){
                 cout<<"scrieti mesajul pe care doriti sa il stergeti: "<<endl;
-                char *m = new char[100];
+                string m;
                 cin.get();
-                cin.get(m, 100);
-                this->serviceMesaj.deleteMesaj(m);
+                getline(cin, m);
+                cout<<"to .../ from... "<<endl;
+                string p;
+                cin>> p;
+                this->serviceMesaj.deleteMesaj(m, p ,username);
+                this->serviceMesaj.deleteMesaj(m,username,p);
             }
 
-            else if(option == 6){
+            else if(option == 6) {
                 mesaj *mesaj;
                 mesaj = this->serviceMesaj.getAll();
-                for(int i=0;i<this->serviceMesaj.getNoService();i++)
-                    cout << mesaj[i];
-
+                for (int i = 0; i < this->serviceMesaj.getNoService(); i++)
+                    if((mesaj[i].getUser1() == username) or (mesaj[i].getUser2() == username))
+                    cout << mesaj[i] << endl;
             }
+
 
             else if(option == 7){
                 cout<<"scrieti evenimentul la care doriti sa participati: "<<endl;
